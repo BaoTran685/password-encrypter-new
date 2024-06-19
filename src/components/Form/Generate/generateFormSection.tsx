@@ -17,6 +17,8 @@ const GenerateFormSectin = ({ items }: { items: Generate_Items }) => {
   const [message, setMessage] = useState<string>('');
   const [isMessageSuccess, setIsMessageSuccess] = useState<boolean>(false);
 
+  const [copied, setCopied] = useState<string>('');
+
   const handleChange = (e: FormEvent<HTMLFormElement>) => {
     setInputObj({
       ...inputObj,
@@ -26,6 +28,7 @@ const GenerateFormSectin = ({ items }: { items: Generate_Items }) => {
       ...errorObj,
       [e.currentTarget.name]: false
     })
+    setCopied('');
     setMessage('');
     setIsMessageSuccess(false);
   }
@@ -57,7 +60,10 @@ const GenerateFormSectin = ({ items }: { items: Generate_Items }) => {
           <InputItem object={items.field.number} value={inputObj.number} isError={errorObj.number} onChange={handleChange} />
         </div>
         <div className="col-span-10">
-          <InputItem object={items.field.password} value={inputObj.password} isError={errorObj.password} onChange={() => { }} />
+          <InputItem object={items.field.password} value={inputObj.password} isError={errorObj.password} onChange={() => { }} setCopied={setCopied}/>
+          {Boolean(copied) && (
+            <div className="text-sm font-medium text-[var(--dark-green-color)] flex justify-end mt-2">copied</div>
+          )}
         </div>
       </div>
       <div className="flex flex-col">
