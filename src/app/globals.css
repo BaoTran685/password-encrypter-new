@@ -14,8 +14,8 @@
   --red-color: #E94057; /* header */
   --light-orange-color: #ea580c; /* header + navbar */ 
   --orange-color: #ea580c; /* #D25600 */
-  --dark-orange-color: #6D2C03;
-
+  --dark-orange-color: #7d3204;
+  --dark-green-color: #2f7d65;
 
   --green-color: #4ade80;
   --yellow-color: #ca8a04;
@@ -32,7 +32,7 @@
     @apply text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl;
   }
   .text--content {
-    @apply text-base md:text-lg lg:text-xl;
+    @apply text-sm md:text-base lg:text-xl;
   }
   .text--sub--content {
     @apply text-sm sm:text-base lg:text-lg;
@@ -48,5 +48,19 @@
 
   .my--container {
     @apply w-full sm:w-[600px] md:w-[600px] lg:w-[700px] xl:w-[800px] 2xl:w-[900px];
+  }
+
+  .input--line {
+    @apply block w-full bg-inherit border-b-2 focus:outline-none focus:border-b-[#1E1E24] transition-colors ease-linear placeholder:text-[#A1A1AA] appearance-none;
+  }
+  .input--box {
+    @apply block w-full rounded-lg bg-inherit focus:outline-none focus:border-[#1E1E24] transition-colors ease-linear placeholder:text-[#A1A1AA] appearance-none;
+  }
+
+  .brighter--shadow--orange {
+    box-shadow: 0 0 0.5rem var(--dark-orange-color)
+  }
+  .brighter--shadow--green {
+    box-shadow: 0 0 0.7rem #81AE9D;
   }
 }

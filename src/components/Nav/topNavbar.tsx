@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 
 
-const Navbar = () => {
+const TopNavbar = () => {
   const pathName = usePathname();
   const { isNavbarOpen, setIsNavbarOpen } = useNavbarContext();
   return (
@@ -19,7 +19,7 @@ const Navbar = () => {
           href={'/'}
           className='flex items-center w-fit'
         >
-          <span className="text--header text-transparent bg-clip-text header--background font-semibold">Password Encrypter</span>
+          <span className="text--header font-semibold">Password Encrypter</span>
         </Link>
 
         <div className="flex flex-row space-x-4">
@@ -62,7 +62,7 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default TopNavbar;
 
 const NavbarItem = ({ item, pathName }: { item: Navbar_Item, pathName: string }) => {
   return (

@@ -3,7 +3,6 @@
 const IndexPage = () => {
   return (
     <section>
-      helloworld
     </section>
   )
 }

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import InnerLayout from "@/layouts/innerLayout";
 import ContextProvider from "@/provider/contextProvider";
 
-const inter = Roboto({ weight: '400', subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
