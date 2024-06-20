@@ -63,4 +63,8 @@
   .brighter--shadow--green {
     box-shadow: 0 0 0.7rem #81AE9D;
   }
+
+  .trans--color {
+    @apply transition-colors ease-in-out duration-300
+  }
 }

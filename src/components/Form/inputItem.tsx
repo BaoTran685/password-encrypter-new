@@ -35,7 +35,7 @@ const InputItem = ({ object, value, isError, onChange, setCopied }: Props) => {
         <div className="relative" >
           <InputBox {...object} value={value} isError={isError} onChange={onChange} />
           <div className="absolute top-0 right-2 h-full flex items-center justify-center">
-            <DocumentDuplicateIcon className="size-6 hover:cursor-pointer" onClick={handleCopy} />
+            <DocumentDuplicateIcon className="size-6 text-[var(--placeholder--gray-color)] hover:cursor-pointer hover:text-black" onClick={handleCopy} />
           </div>
         </div >
       ) : (

@@ -1,7 +1,7 @@
 'use server'
 import crypto from 'crypto'
 
-import base91 from 'node-base91'
+const base91 = require('node-base91')
 
 export const generatePassword = async ({ length }: { length: number }) => {
   try {
