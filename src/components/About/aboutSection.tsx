@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 
-
+const oldPasswordEncrypter = process.env.OLD_PASSWORD_ENCRYPTER ? process.env.OLD_PASSWORD_ENCRYPTER : ''
 
 const AboutSection = () => {
   return (
@@ -9,7 +9,7 @@ const AboutSection = () => {
       <div className="flex flex-col justify-center">
         <div className="text--content leading-relaxed">
           Hello...!
-          This app is the upgrade or (maybe an simplified) version of <Link href='' className="text-[var(--dark-blue-color)] underline">the other one</Link>.
+          This app is the upgrade or (maybe an simplified) version of <Link href={oldPasswordEncrypter} rel='noopener noreferrer' target='_blank' className="text-[var(--dark-blue-color)] underline">the other one</Link>.
         </div>
         <div className="text--content leading-relaxed mt-2">
           <span className="text-[var(--orange-color)] font-semibold">- For the Generator, </span>

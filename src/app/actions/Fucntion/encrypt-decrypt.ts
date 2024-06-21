@@ -41,7 +41,7 @@ export const EncryptDecrypt = async ({
   }
   return {
     errorObj: { key: true, text: true },
-    message: 'fail',
+    message: 'invalid key or text',
     content: { returnText: '' },
     ok: false
   }

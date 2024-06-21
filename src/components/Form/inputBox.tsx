@@ -35,7 +35,7 @@ const InputBox = ({ name, type, placeholder, typeInput = 'input', value, isError
     ) : (
       <textarea
         name={name}
-        className={cn(`text--content text-[var(--text-black-color)] min-h-20 input--box border-2 p-2 ${className}`,
+        className={cn(`text--content text-[var(--text-black-color)] min-h-28 input--box border-2 p-2 ${className}`,
           {
             'border-red-600': isError === true,
           }
