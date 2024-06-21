@@ -9,7 +9,7 @@ import { FormEvent, useState } from "react";
 const NUMBER_LOWER = 8;
 const NUMBER_HIGHTER = 36;
 
-const GenerateFormSectin = ({ items }: { items: Generate_Items }) => {
+const GenerateFormSection = ({ items }: { items: Generate_Items }) => {
   const [inputObj, setInputObj] = useState<Generate_InputObj>(items.initInputObj)
   const [errorObj, setErrorObj] = useState<Generate_ErrorObj>(items.initErrorObj)
 
@@ -67,7 +67,7 @@ const GenerateFormSectin = ({ items }: { items: Generate_Items }) => {
         </div>
       </div>
       <div className="flex flex-col">
-        <LoadingButton type='submit' text='Generate' isLoading={isLoading} isSuccess={isMessageSuccess} />
+        <LoadingButton type='submit' text='Generate' isLoading={isLoading} isSuccess={isMessageSuccess} className="bg-[var(--yellow-color)]" />
         {Boolean(message) && (
           <div className={cn('text-sm font-semibold mt-2', {
             'text-[var(--dark-green-color)]': isMessageSuccess,
@@ -80,7 +80,7 @@ const GenerateFormSectin = ({ items }: { items: Generate_Items }) => {
   )
 }
 
-export default GenerateFormSectin;
+export default GenerateFormSection;
 
 // checkInput checks if the number input is a number or not, if it is a number,
 // then it checks if it is in the permitted range

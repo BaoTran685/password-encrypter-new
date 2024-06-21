@@ -10,15 +10,13 @@ interface Props {
   setCopied?: Function,
 }
 
-const InputItem = ({ object, value, isError, onChange, setCopied }: Props) => {
+const InputItem = ({ object, value, isError, onChange, setCopied = () => { } }: Props) => {
   const { label, name } = object;
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(value);
-      if (setCopied) {
-        setCopied(value);
-      }
+      setCopied(value);
     } catch (e) {
       console.log('Error in GeneratePage, handleCopy', e);
     }
@@ -31,11 +29,11 @@ const InputItem = ({ object, value, isError, onChange, setCopied }: Props) => {
       >
         {label}
       </label>
-      {name === 'password' ? (
+      {name === 'password' || name === 'text' || name === 'returnText' ? (
         <div className="relative" >
-          <InputBox {...object} value={value} isError={isError} onChange={onChange} />
-          <div className="absolute top-0 right-2 h-full flex items-center justify-center">
-            <DocumentDuplicateIcon className="size-6 text-[var(--placeholder--gray-color)] hover:cursor-pointer hover:text-black" onClick={handleCopy} />
+          <InputBox {...object} value={value} isError={isError} onChange={onChange} className='pr-8' />
+          <div className="absolute top-2 right-2 block ">
+            <DocumentDuplicateIcon className="size-6 text-gray-500 hover:cursor-pointer hover:text-black trans--color" onClick={handleCopy} />
           </div>
         </div >
       ) : (
